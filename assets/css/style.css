@@ -1,0 +1,12 @@
+.Click {
+padding: 0 10px 0 10px;
+}
+
+.rating {
+	width: 100px;
+}
+.SizeAdjust {
+	width: 200px;
+	position:relative;
+	float: left;
+}
