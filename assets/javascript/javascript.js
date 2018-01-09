@@ -68,7 +68,7 @@ $(".Button"+i).append(GiphyTopics[i])
 
 buttons[0].onclick = function(){ 
     var ArraySlot = ($(this).attr("ArraySlot"))
-    queryURL = "http://api.giphy.com/v1/gifs/search?q="+GiphyTopics[ArraySlot]+"&api_key="+APIKey+"&limit=10";
+    queryURL = "https://api.giphy.com/v1/gifs/search?q="+GiphyTopics[ArraySlot]+"&api_key="+APIKey+"&limit=10";
     
     $.ajax({
     
