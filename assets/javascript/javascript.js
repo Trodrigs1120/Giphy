@@ -51,7 +51,7 @@ $.ajax({
 })
 
 
-$("#search").on("click", function() {
+$("#AddTopic").on("click", function() {
 i=GiphyTopics.length;
 var KeyWord = $("#keyword").val();
 GiphyTopics[i]=KeyWord;
