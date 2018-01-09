@@ -18,7 +18,7 @@ $(document).ready(function () {
 $(".Click").on("click", function(){
 var ArraySlot = ($(this).attr("ArraySlot"))
 
-queryURL = "http://api.giphy.com/v1/gifs/search?q="+GiphyTopics[ArraySlot]+"&api_key="+APIKey+"&limit=10";
+queryURL = "https://api.giphy.com/v1/gifs/search?q="+GiphyTopics[ArraySlot]+"&api_key="+APIKey+"&limit=10";
 $.ajax({
     url: queryURL,
     method: "GET"
