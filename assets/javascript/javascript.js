@@ -14,17 +14,7 @@ $(document).ready(function () {
     $(".ButtonHolder").append(Button);
     $(".Button"+i).append(GiphyTopics[i])
     }
-function gimmegifs(){
-            GiphyDiv= $("<div>");
-            GiphyDiv.addClass("Gif"+i);
-            GiphyDiv.addClass("SizeAdjust");
-            GiphyImage= $("<img>");
-            GiphyImage.attr("width", 200)
-            GiphyImage.attr("height", 200)
-            GiphyImage.addClass("gif")
-            $(".GiphyGoesHere").append(GiphyDiv);
-            $(".Gif"+i).append(GiphyImage);
-}
+
 $(".Click").on("click", function(){
 var ArraySlot = ($(this).attr("ArraySlot"))
 
@@ -34,7 +24,7 @@ $.ajax({
     method: "GET"
     }).done(function(response) {
         
-        if (IsEmpty===false){
+        if (IsEmpty===false){ 
             $(".GiphyGoesHere").empty();    
             
             } else {
@@ -42,9 +32,18 @@ $.ajax({
 
             }
         for (var i=0; i<response.data.length; i++){
-            gimmegifs();
-            GiphyImage.attr("src", response.data[i].images.fixed_height_still.url)
+            GiphyDiv= $("<div>");
+            GiphyDiv.addClass("SizeAdjust");
+            GiphyDiv.addClass("Gif"+i);
+            GiphyImage= $("<img>");
+            GiphyImage.attr("width", 200)
+            GiphyImage.attr("height", 200)
+            GiphyImage.addClass("gif")
+            $(".GiphyGoesHere").append(GiphyDiv);
+            $(".Gif"+i).append(GiphyImage);
             $(".Gif"+i).append("<p class=rating> Rating: "+response.data[i].rating+"</p>");
+            GiphyImage.attr("src", response.data[i].images.fixed_height_still.url)
+            
             
             }
 })
@@ -86,9 +85,17 @@ buttons[0].onclick = function(){
 
             }
         for (var i=0; i<response.data.length; i++){
-            gimmegifs();
-            GiphyImage.attr("src", response.data[i].images.fixed_height_still.url)
+            GiphyDiv= $("<div>");
+            GiphyDiv.addClass("SizeAdjust");
+            GiphyDiv.addClass("Gif"+i);
+            GiphyImage= $("<img>");
+            GiphyImage.attr("width", 200)
+            GiphyImage.attr("height", 200)
+            GiphyImage.addClass("gif")
+            $(".GiphyGoesHere").append(GiphyDiv);
+            $(".Gif"+i).append(GiphyImage);
             $(".Gif"+i).append("<p class=rating> Rating: "+response.data[i].rating+"</p>");
+            GiphyImage.attr("src", response.data[i].images.fixed_height_still.url)
             }
 })  }
 
