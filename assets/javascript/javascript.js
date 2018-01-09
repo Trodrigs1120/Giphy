@@ -23,7 +23,7 @@ $.ajax({
     url: queryURL,
     method: "GET"
     }).done(function(response) {
-        
+        console.log(response.data)
         
         if (IsEmpty===false){
             $(".GiphyGoesHere").empty();    
@@ -33,6 +33,7 @@ $.ajax({
 
             }
         for (var i=0; i<response.data.length; i++){
+            
             GiphyDiv= $("<div>");
             GiphyDiv.addClass("Gif"+i);
             GiphyDiv.addClass("SizeAdjust");
@@ -64,12 +65,13 @@ $("#search").on("click", function() {
 // var btn = $("<button>");
 
 var wrapper = document.createElement('div');
-//var wrapper = document.getElementsByClassName("ButtonHolder")
+//var wrapper = document.getElementById("Move");
 wrapper.appendChild(btn);
+//$(".ButtonHolder").append(btn);
 btn.classList.add("Button"+i);
 btn.classList.add("Click");
 btn.setAttribute("ArraySlot", i );
-document.body.appendChild(wrapper);
+$("#Move").append(wrapper);
 var buttons = wrapper.getElementsByTagName("BUTTON");
 $(".Button"+i).append(GiphyTopics[i])
 // we still need to move the buttons up top
@@ -99,7 +101,7 @@ buttons[0].onclick = function(){
             GiphyImage.attr("src", response.data[i].images.downsized.url)
             GiphyImage.attr("width", 200)
             GiphyImage.attr("height", 200)
-            
+            GiphyImage.addClass("gif")
             $(".GiphyGoesHere").append(GiphyDiv);
             $(".Gif"+i).append("<p class=rating> Rating: "+response.data[i].rating+"</p>");
             $(".Gif"+i).append(GiphyImage);
@@ -107,6 +109,8 @@ buttons[0].onclick = function(){
 })  }
 
 }); 
-
+// https://codepen.io/calebgrove/pen/bIsqy
+// https://stackoverflow.com/questions/44298501/how-to-pause-and-start-gif-using-jquery-ajax
+// still is located in response.data.iamges.original_still
 });
 

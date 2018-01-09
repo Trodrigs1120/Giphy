@@ -1,5 +1,7 @@
 .Click {
 padding: 0 10px 0 10px;
+float:left;
+position: relative;
 }
 
 .rating {
